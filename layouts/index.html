@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tanyb</title>
+</head>
+<body>
+    <h3>this is home page</h3>
+    <div class="intro">{{ .Content }}</div>
+    <ul>
+        {{ range .Pages }}
+            <li> 
+                <h4> <a href="{{ .URL }}">{{ .Title }}</a> </h4>
+                <p> {{ .Content }} </p>
+            </li>
+        {{ end }}
+    </ul>
+
+    <div class="taxo">
+        {{ range .Site.Taxonomies.series.js }}
+            <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+        {{ end }} 
+    </div>
+    <section id="menu">
+        <ul>
+            {{ range .Site.Taxonomies.tags }}
+                <li> <a href="{{ .Page.Permalink }}"> {{ .Page.Title }} </a><span>{{ .Count }}</span></li>
+                
+                <ul>
+                    {{ range .Pages }}
+                       <li><a href="{{ .Permalink }}">{{ .Title }}</a></li> 
+                    {{ end }}
+
+                </ul>
+            {{ end }}
+        </ul>
+    </section>
+
+    <hr />
+    <ul>
+        {{ range .Data.Terms.Alphabetical }}
+                <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
+        {{ end }}
+    </ul>
+
+    <hr />
+    <section class="all-taxs">
+        <ul>
+            {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
+                {{  with  $.Site.GetPage (printf "/%s" $taxonomy_term) }}
+                    <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+                    {{ range .Pages }}
+                        <li><a href="{{ .Permalink }}">{{ .Title}}</a></li>
+                    {{ end }}
+                {{ end }}
+                <p>
+                    {{ range $value := $taxonomy }}
+                        <ul>
+                            {{ range $value.Pages }}
+                                <li hugo-nav="{{ .RelPermalink}}">
+                                    <a href="{{ .Permalink}}">{{ .LinkTitle }}</a>
+                                </li>
+                            {{ end }}
+                        </ul>
+
+                    {{ end }}
+                </p>
+            {{ end }}
+        </ul>
+
+    </section>
+</body>
+</html>

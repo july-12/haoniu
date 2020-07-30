@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Page</title>
+</head>
+<body>
+    <div class="posts">
+        {{ range .Pages }}
+            <div class="post">
+                <h3><a href="{{ .Permalink }} ">{{ .Title}}</a></h3>
+            </div>
+        {{ end }}
+    </div>
+</body>
+</html>

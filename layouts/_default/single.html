@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Single Page</title>
+    {{ range .Site.Params.custom_css -}}
+        <link href="{{ . | absURL }}" rel="stylesheet" type="text/css">
+    {{- end }}
+</head>
+<body>
+
+    <div>{{ .Params.myname }}</div>    
+    <div>{{ .Summary }}</div>    
+    <div class="item">
+        <h3>{{ .Title }}</h3>
+        <div>
+                {{ range (.GetTerms "tags") }}
+                    {{ .LinkTitle }}
+                {{ end }}
+        </div>
+        <p class="content">{{ .Content }}</p>
+
+    </div>
+</body>
+</html>
