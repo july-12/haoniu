@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Tanyb</title>
+    <title>Tanyb Blog</title>
+    {{ $style := resources.Get "scss/home.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
 </head>
+
 <body>
-    <h3>this is home page</h3>
+    <div class="content">
+        <aside>
+            <div class="info">
+                <img src="images/logo.png" alt="image" />
+                <h3> Tanyb </h3>
+                <p class="bio"> web developer</p>
+            </div>
+        </aside>
+        <article>
+            <header>
+                <ul class="nav">
+                    <li> Video </li>
+                    <li> Blog </li>
+                    <li> Github </li>
+                </ul>
+            </header>
+            <main>
+                <div class="list-wrapper">
+                    {{ range .Site.Sections }}
+                        {{ range .Pages }}
+                            {{ partial "home/resent-item.html" . }}
+                        {{ end }}
+
+                    {{ end }}
+                </div>
+                <footer>&copy; tanyb</footer>
+            </main>
+        </article>
+    </div>
+    <!-- <h3>this is home page</h3>
     <div class="intro">{{ .Content }}</div>
     <ul>
         {{ range .Pages }}
@@ -68,6 +101,7 @@
             {{ end }}
         </ul>
 
-    </section>
+    </section> -->
 </body>
+
 </html>
