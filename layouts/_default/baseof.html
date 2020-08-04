@@ -9,7 +9,7 @@
     {{ range .Site.Params.custom_css -}}
     <link rel="stylesheet" href="{{ . | absURL }}">
     {{- end }}
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1985903_bh2p0bzcit8.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1985903_bh2p0bzcit8.css">
     {{ block "css" . }}
     {{ end }}
     {{ $headerStyle := resources.Get "scss/header.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}

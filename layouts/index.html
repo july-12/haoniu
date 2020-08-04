@@ -7,7 +7,7 @@
     {{ range .Site.Params.custom_css -}}
     <link rel="stylesheet" href="{{ . | absURL }}">
     {{- end }}
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1985903_bh2p0bzcit8.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1985903_bh2p0bzcit8.css">
     {{ $style := resources.Get "scss/home.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     {{ $headerStyle := resources.Get "scss/header.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
