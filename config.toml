@@ -6,4 +6,4 @@ title = "My New Hugo Site"
     tag = "tags"
     mood = "moods"
 [params]
-    custom_css = ["css/list.css", "css/single.css"]
+    custom_css = ["css/normalize.css"]

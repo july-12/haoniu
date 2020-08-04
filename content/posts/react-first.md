@@ -2,10 +2,9 @@
 title: "React First"
 date: 2020-07-29T10:56:46+08:00
 draft: false
-summary: this is about react intro
 myname: "tanyb"
-tags: ['js', 'css']
-moods: ['happy']
+tags: ['javascript', 'css']
+cover: "images/bg2.png"
 ---
 
 ## Other
@@ -16,6 +15,15 @@ this is **inner**  content
 
 ## Intro
 
+    this is nice framework
+    this is nice framework
+    this is nice framework
+    this is nice framework
+    this is nice framework
+    this is nice framework
+    this is nice framework
+    this is nice framework
+    this is nice framework
     this is nice framework
 
 

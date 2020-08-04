@@ -41,20 +41,6 @@ a {
     & > article {
         flex: 1;
 
-        & > header {
-            height: $header-height;
-            background: #fafafa;
-            padding: 0 20px;
-            .nav {
-                display: inline-flex;
-                align-items: center;
-                justify-content: flex-end;
-                li {
-                    cursor: pointer;
-                    margin-right: 16px;
-                }
-            }
-        }
         & > main {
             height: calc(100% - #{$header-height});
             background: #fefefe;
@@ -73,16 +59,31 @@ a {
                         border-radius: 10px;
                     }
                     .info {
-                        margin-left: 20px;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-around;
                         flex: 1;
+                        position: relative;
+                        .tag-list {
+                            position: absolute;
+                            top: 22px;
+                            left: 80px;
+                            .tag {
+                                padding: 3px 6px;
+                                margin-left: 6px;
+                            }
+                        }
                         h3,
                         p {
                             margin: 0;
                             padding: 0;
                         }
+                        p.date {
+                            color: #868282;
+                            font-size: 14px;
+                            margin: 4px 0 6px 0;
+                        }
+                        p.summary {
+                            max-width: 600px;
+                        }
+
                         button {
                             width: 80px;
                             height: 32px;
@@ -107,5 +108,28 @@ a {
                 text-align: center;
             }
         }
+    }
+}
+
+.tag {
+    display: inline-block;
+    text-align: center;
+    min-width: 60px;
+    padding: 6px 10px;
+    color: royalblue;
+    border: 1px solid royalblue;
+    border-radius: 20px;
+    &:hover {
+        opacity: 0.8;
+        color: blueviolet;
+        border: 1px solid blueviolet;
+    }
+    &-css {
+        color: yellowgreen;
+        border: 1px solid yellowgreen;
+    }
+    &-javascript {
+        color: goldenrod;
+        border: 1px solid goldenrod;
     }
 }

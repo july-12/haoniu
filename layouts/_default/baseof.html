@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>My Blog</title>
+    {{ block "title" . }}
+        <title>My Block </title>
+    {{ end }}
+    {{ range .Site.Params.custom_css -}}
+    <link rel="stylesheet" href="{{ . | absURL }}">
+    {{- end }}
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1985903_bh2p0bzcit8.css">
+    {{ block "css" . }}
+    {{ end }}
+    {{ $headerStyle := resources.Get "scss/header.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $headerStyle.Permalink }}">
 </head>
+
 <body>
     <div class="content">
 
-    {{ block "main" . }}
-        this is default content of main block
+        {{ partial "header.html" . }}
 
-    {{ end }}
+        {{ block "main" . }}
+        this is default content of main block
+        {{ end }}
 
     </div>
-    
+
 </body>
+
 </html>

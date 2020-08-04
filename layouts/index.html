@@ -4,8 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Tanyb Blog</title>
+    {{ range .Site.Params.custom_css -}}
+    <link rel="stylesheet" href="{{ . | absURL }}">
+    {{- end }}
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1985903_bh2p0bzcit8.css">
     {{ $style := resources.Get "scss/home.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    {{ $headerStyle := resources.Get "scss/header.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{ $headerStyle.Permalink }}">
 </head>
 
 <body>
@@ -18,20 +24,20 @@
             </div>
         </aside>
         <article>
-            <header>
-                <ul class="nav">
-                    <li> Video </li>
-                    <li> Blog </li>
-                    <li> Github </li>
-                </ul>
-            </header>
+            {{ partial "header.html" . }}
             <main>
-                <div class="list-wrapper">
-                    {{ range .Site.Sections }}
+                <!-- <div class="list-wrapper">
+                    {{ range sort .Site.Sections "value" "desc" }}
                         {{ range .Pages }}
                             {{ partial "home/resent-item.html" . }}
                         {{ end }}
-
+                    {{ end }}
+                </div> -->
+                <div class="list-wrapper">
+                    {{ range .Data.Pages.Reverse  }}
+                    {{ range .Pages }}
+                    {{ partial "home/resent-item.html" . }}
+                    {{ end }}
                     {{ end }}
                 </div>
                 <footer>&copy; tanyb</footer>

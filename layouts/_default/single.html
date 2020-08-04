@@ -1,14 +1,27 @@
-    {{ define "main" }}
-    <div class="item">
-        <h3>{{ .Title }}</h3>
-        <div>
-                {{ range (.GetTerms "tags") }}
-                    {{ .LinkTitle }}
-                {{ end }}
-        </div>
-        <p class="content">{{ .Content }}</p>
+{{ define "title" }}
+    <title> {{ .Title }}</title>
+{{ end }}
 
-    </div>
-    <div>footer</div>
+{{ define "css" }}
+    {{ $style := resources.Get "scss/single.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ end }}
 
+
+
+{{ define "main" }}
+<div class="item">
+    <h1>{{ .Title }}</h1>
+    <p class="item-date"> {{ .Date.Format "2006-Jan-2" }}</p>
+    {{ with .Param "cover" }}
+    <img src="/{{ . }}" alt="cover">
     {{ end }}
+
+    <p class="item-content">{{ .Content }}</p>
+    <div class="item-tags">
+        {{ range (.GetTerms "tags") }}
+        {{ .LinkTitle }}
+        {{ end }}
+    </div>
+</div>
+{{ end }}

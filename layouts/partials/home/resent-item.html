@@ -1,8 +1,13 @@
 <li class="resent-item">
     <div class="info">
         <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-        <p> {{ .Date.Format "2006-Jan-2" }}</p>
-        <p style="height: 50px">{{ .Summary | truncate 200 }} </p>
+        <p class="date"> {{ .Date.Format "2006-Jan-2" }}</p>
+        <p class="summary" style="height: 50px">{{ .Summary | truncate 200 }} </p>
+        <div class="tag-list">
+            {{ range (.GetTerms "tags") }}
+            <a href="{{ .Permalink }}"><span class="tag tag-{{ .LinkTitle }}">{{ .LinkTitle }}</span></a>
+            {{ end }}
+        </div>
     </div>
     {{ with .Param "cover" }}
     <img src="{{ . }}" alt="cover">

@@ -1,9 +1,9 @@
 ---
 title: "Vi"
 date: 2020-08-03T20:30:50+08:00
-draft: true
+draft: false
 author: "tanyb"
-cover: "images/pet2.png"
+cover: "images/bg1.jpg"
 ---
 
 ## title
