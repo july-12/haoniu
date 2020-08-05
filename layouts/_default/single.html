@@ -7,23 +7,33 @@
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 {{ end }}
 
-
-
 {{ define "main" }}
 {{ partial "header.html" . }}
-<div class="item">
+<div class="article-wrap">
+
+    {{ $rootPage :=  eq .Dir "/"  }}
+
     <article>
-        <h1>{{ .Title }}</h1>
-        <p class="item-date"> {{ .Date.Format "2006-Jan-2" }}</p>
+        <h2>{{ .Title }}</h2>
+        {{ if eq $rootPage false }}
+        <div class="anchor"> 作者: {{ .Param "author" }}</div>
+        <div style="margin-bottom: 12px;">
+            <span class="date">
+                {{ .Date.Format "2006-Jan-2" }}
+            </span>
+            <span>
+                {{ range (.GetTerms "tags") }}
+                <span class="tag tag-{{ .LinkTitle }}">{{ .LinkTitle }}</span>
+                {{ end }}
+            </span>
+        </div>
+        {{ end }}
         {{ with .Param "cover" }}
         <img src="/{{ . }}" alt="cover">
         {{ end }}
 
-        <p class="item-content">{{ .Content }}</p>
-        <div class="item-tags">
-            {{ range (.GetTerms "tags") }}
-            {{ .LinkTitle }}
-            {{ end }}
+        <div class="content">
+        {{ .Content }}
         </div>
     </article>
     <aside>

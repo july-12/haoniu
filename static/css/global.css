@@ -1,0 +1,46 @@
+body {
+    font-family: 'Arial', 'Microsoft YaHei', '黑体', '宋体', sans-serif;
+    color: #525252;
+}
+
+.date {
+    color: #7f7f7f;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.anchor {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-ssong;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #3f3f3f;
+}
+
+.tag {
+    display: inline-block;
+    text-align: center;
+    min-width: 60px;
+    padding: 4px 10px;
+    color: royalblue;
+    border: 1px solid royalblue;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.tag:hover {
+    opacity: 0.8;
+    color: blueviolet;
+    border: 1px solid blueviolet;
+}
+.tag-css {
+    color: yellowgreen;
+    border: 1px solid yellowgreen;
+}
+.tag-javascript {
+    color: goldenrod;
+    border: 1px solid goldenrod;
+}
+.tag-ux {
+    color: tomato;
+    border: 1px solid tomato;
+}

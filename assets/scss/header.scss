@@ -10,6 +10,13 @@ $header-height: 40px;
         justify-content: center;
         padding: 0 20px;
 
+        i {
+            font-size: 17px;
+            color: cornflowerblue;
+            &:hover {
+                color: rosybrown;
+            }
+        }
         .nav {
             flex: 1;
             display: inline-flex;
@@ -18,9 +25,6 @@ $header-height: 40px;
             li {
                 cursor: pointer;
                 margin-right: 16px;
-                i {
-                    font-size: 17px;
-                }
             }
         }
     }

@@ -26,30 +26,25 @@ React是目前最流行的前端开发框架之一，其操作简单，功能强
 
 直接下载源码
 
-## 示例
-
-{{< highlight javascript >}}
-    const container = document.getElementById('app')
-    const App = () => {
-        return <div> this is app </div>
-    }
-    render(<App />, container)
-{{<  /highlight >}}
-
-```javascript
-    const container = document.getElementById('app')
-    const App = () => {
-        return <div> this is app </div>
-    }
-    render(<App />, container)
-```
-
 ### 示列三
 
 ```javascript
-    const container = document.getElementById('app')
+
+    const container = document.getElementById('app') const container = document.getElementById('app') const container = document.getElementById('app') 
     const App = () => {
         return <div> this is app </div>
     }
+
     render(<App />, container)
+
+```
+
+```swift
+    package main
+
+    import "fmt"
+
+    func main() {
+        fmt.Println("Hello, World!")
+    }
 ```

@@ -3,6 +3,7 @@ title: "Vi"
 date: 2020-08-03T20:30:50+08:00
 draft: false
 author: "tanyb"
+tags: ['tool']
 cover: "images/bg1.jpg"
 ---
 

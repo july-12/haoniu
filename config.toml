@@ -2,8 +2,13 @@ baseURL = "https://hsj1993.cn/"
 languageCode = "en-us"
 title = "Shimmer Blog"
 
+[markup]
+    [markup.highlight]
+        style = "dracula"
+        tabWidth = 2
+
 [taxonomies]
     tag = "tags"
     mood = "moods"
 [params]
-    custom_css = ["css/normalize.css"]
+    custom_css = ["css/normalize.css", "css/global.css"]

@@ -14,12 +14,10 @@
         }
     };
     document.onscroll = () => {
-        console.log('scroll...');
         const [, offsetTop] = getScroll();
-        console.log(offsetTop);
         const tableOfContent = document.getElementById('TableOfContents');
         const bounding = tableOfContent.getBoundingClientRect();
-        const overTopClass = 'fix-content';
+        const overTopClass = 'fix-table-content';
         const marginTop = 40;
         if (offsetTop > bounding.top + marginTop) {
             tableOfContent.classList.add(overTopClass);
