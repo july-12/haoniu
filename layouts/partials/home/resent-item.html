@@ -2,7 +2,7 @@
     <div class="info">
         <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         <p class="date"> {{ .Date.Format "2006-Jan-2" }}</p>
-        <p class="summary" style="height: 50px">{{ .Summary | truncate 200 }} </p>
+        <p class="summary" style="height: 50px">{{ .Summary | truncate 120 }} </p>
         <div class="tag-list">
             {{ range (.GetTerms "tags") }}
             <a href="{{ .Permalink }}"><span class="tag tag-{{ .LinkTitle }}">{{ .LinkTitle }}</span></a>

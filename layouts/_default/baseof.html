@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     {{ block "title" . }}
-        <title>My Block </title>
+    <title>{{ .Site.Title }}</title>
     {{ end }}
     {{ range .Site.Params.custom_css -}}
     <link rel="stylesheet" href="{{ . | absURL }}">
@@ -18,14 +18,14 @@
 
 <body>
     <div class="content">
-
-        {{ partial "header.html" . }}
-
         {{ block "main" . }}
-        this is default content of main block
+        <div>this is default content of main block</div>
         {{ end }}
 
     </div>
+
+    {{ block "insertJS" . }}
+    {{ end }}
 
 </body>
 

@@ -18,12 +18,49 @@ a {
 
 .item {
     width: 80%;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 20px auto;
-    &-content {
+    position: relative;
+    display: flex;
+    & > article {
+        flex: 1;
+        & > img {
+            max-width: 680px;
+            border-radius: 10px;
+        }
     }
-    & > img {
-        max-width: 680px;
-        border-radius: 10px;
+    & > aside {
+        width: 200px;
+        margin-top: 40px;
+        padding-left: 20px;
     }
+}
+
+@mixin truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+nav#TableOfContents {
+    ul {
+        li {
+            margin-bottom: 10px;
+            & > a {
+                width: 100%;
+                display: inline-block;
+                @include truncate;
+            }
+            & > ul {
+                width: calc(100% - 20px);
+                margin-top: 10px;
+                margin-left: 30px;
+            }
+        }
+    }
+}
+
+.fix-content {
+    position: fixed;
+    top: 20px;
 }

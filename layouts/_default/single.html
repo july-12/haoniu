@@ -1,27 +1,40 @@
 {{ define "title" }}
-    <title> {{ .Title }}</title>
+<title> {{ .Title }}</title>
 {{ end }}
 
 {{ define "css" }}
-    {{ $style := resources.Get "scss/single.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ $style := resources.Get "scss/single.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
 {{ end }}
 
 
 
 {{ define "main" }}
+{{ partial "header.html" . }}
 <div class="item">
-    <h1>{{ .Title }}</h1>
-    <p class="item-date"> {{ .Date.Format "2006-Jan-2" }}</p>
-    {{ with .Param "cover" }}
-    <img src="/{{ . }}" alt="cover">
-    {{ end }}
-
-    <p class="item-content">{{ .Content }}</p>
-    <div class="item-tags">
-        {{ range (.GetTerms "tags") }}
-        {{ .LinkTitle }}
+    <article>
+        <h1>{{ .Title }}</h1>
+        <p class="item-date"> {{ .Date.Format "2006-Jan-2" }}</p>
+        {{ with .Param "cover" }}
+        <img src="/{{ . }}" alt="cover">
         {{ end }}
-    </div>
+
+        <p class="item-content">{{ .Content }}</p>
+        <div class="item-tags">
+            {{ range (.GetTerms "tags") }}
+            {{ .LinkTitle }}
+            {{ end }}
+        </div>
+    </article>
+    <aside>
+        {{ .TableOfContents }}
+    </aside>
 </div>
+{{ end }}
+
+{{ define "insertJS" }}
+
+{{ $global := resources.Get "js/single.js" | resources.Minify }}
+<script type="text/javascript" src="{{ $global.Permalink }}"></script>
+
 {{ end }}

@@ -1,6 +1,6 @@
-baseURL = "https://silly-swirles-56d6f6.netlify.app/"
+baseURL = "https://hsj1993.cn/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Shimmer Blog"
 
 [taxonomies]
     tag = "tags"
