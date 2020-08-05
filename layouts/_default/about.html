@@ -1,0 +1,16 @@
+{{ define "title" }}
+<title> {{ .Title }}</title>
+{{ end }}
+
+{{ define "css" }}
+{{ $style := resources.Get "scss/about.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ end }}
+
+{{ define "main" }}
+{{ partial "header.html" . }}
+<div class="article-wrap about">
+    {{ partial "about/tanyb" }}
+    {{ partial "about/hsj" }}
+</div>
+{{ end }}

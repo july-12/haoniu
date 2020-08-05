@@ -352,9 +352,7 @@ template {
 * customize
 */
 html,
-body,
-ul,
-ol {
+body {
     width: 100%;
     height: 100%;
     padding: 0;

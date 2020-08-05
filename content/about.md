@@ -1,7 +1,7 @@
 ---
-title: "About"
-date: 2020-07-29T10:56:09+08:00
+title: "关于作者"
 draft: false
+layout: "about"
 ---
 
     I'am web developer, who love create challenge website very much.

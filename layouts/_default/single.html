@@ -3,8 +3,8 @@
 {{ end }}
 
 {{ define "css" }}
-{{ $style := resources.Get "scss/single.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}">
+    {{ $style := resources.Get "scss/single.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
 {{ end }}
 
 {{ define "main" }}
@@ -33,7 +33,7 @@
         {{ end }}
 
         <div class="content">
-        {{ .Content }}
+            {{ .Content }}
         </div>
     </article>
     <aside>
