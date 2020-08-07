@@ -44,3 +44,9 @@ body {
     color: tomato;
     border: 1px solid tomato;
 }
+
+.highlight > pre {
+    max-width: 700px;
+    padding: 10px 0;
+    overflow: auto;
+}

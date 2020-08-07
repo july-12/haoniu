@@ -3,19 +3,17 @@
 {{ end }}
 
 {{ define "css" }}
-    {{ $style := resources.Get "scss/single.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ $style := resources.Get "scss/single.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
 {{ end }}
 
 {{ define "main" }}
+
 {{ partial "header.html" . }}
 <div class="article-wrap">
 
-    {{ $rootPage :=  eq .Dir "/"  }}
-
     <article>
         <h2>{{ .Title }}</h2>
-        {{ if eq $rootPage false }}
         <div class="anchor"> 作者: {{ .Param "author" }}</div>
         <div style="margin-bottom: 12px;">
             <span class="date">
@@ -27,7 +25,6 @@
                 {{ end }}
             </span>
         </div>
-        {{ end }}
         {{ with .Param "cover" }}
         <img src="/{{ . }}" alt="cover">
         {{ end }}

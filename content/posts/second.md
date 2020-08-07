@@ -1,6 +1,6 @@
 ---
-title: "Who can do UX"
-date: 2020-07-29T17:23:46+08:00
+title: "设计侍"
+date: 2020-07-29
 draft: false
 author: "天才佳"
 tags: ['ux']

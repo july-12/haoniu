@@ -1,0 +1,26 @@
+$header-height: 400px;
+$video-width: 680px;
+$video-height: 400px;
+
+.video-wrap {
+    & > header {
+        height: $header-height;
+        background-color: #26b1b1;
+    }
+    & > main {
+        width: $video-width + 20px;
+        margin: 0 auto;
+        position: relative;
+        padding: 10px 20px;
+        padding-top: $video-height / 2 + 20px;
+        & > video {
+            position: absolute;
+            left: 50%;
+            top: -$video-height / 2;
+            transform: translateX(-50%);
+            width: 100%;
+            width: $video-width;
+            height: $video-height;
+        }
+    }
+}

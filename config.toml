@@ -11,4 +11,5 @@ title = "Shimmer Blog"
     tag = "tags"
     mood = "moods"
 [params]
+    cdnUrl = "http://image-hsj1993.test.upcdn.net"
     custom_css = ["css/normalize.css", "css/global.css"]

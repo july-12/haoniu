@@ -31,21 +31,26 @@ $logo-size: 180px;
                 min-height: calc(100% - #{$footer-height});
                 padding: 20px;
                 box-sizing: border-box;
+                max-width: 960px;
+                width: 96%;
+                min-width: 600px;
+                margin: 0 auto;
                 .resent-item {
                     display: flex;
                     margin-bottom: 20px;
-                    height: 130px;
+                    height: 160px;
                     img {
                         width: 160px;
                         height: 100%;
                         border-radius: 10px;
+                        margin-left: 10px;
                     }
                     .info {
                         flex: 1;
                         position: relative;
                         .tag-list {
                             position: absolute;
-                            top: 22px;
+                            top: 38px;
                             left: 80px;
                             .tag {
                                 padding: 0 4px;
@@ -57,14 +62,17 @@ $logo-size: 180px;
                             margin: 0;
                             padding: 0;
                         }
+                        h3 {
+                            font-size: 1.6em;
+                        }
                         p.date {
                             font-size: 14px;
-                            margin: 4px 0 8px 0;
+                            margin: 10px 0;
                         }
                         p.summary {
                             max-width: 600px;
                             font-size: 14px;
-                            line-height: 20px;
+                            line-height: 24px;
                         }
 
                         button {

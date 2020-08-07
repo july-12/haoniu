@@ -10,6 +10,6 @@
         </div>
     </div>
     {{ with .Param "cover" }}
-    <img src="{{ . }}" alt="cover">
+    <img src="{{ $.Site.Params.cdnUrl }}/{{ . }}" alt="cover">
     {{ end }}
 </li>
