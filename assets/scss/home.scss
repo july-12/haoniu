@@ -23,11 +23,9 @@ $logo-size: 180px;
     & > article {
         flex: 1;
 
-        & > main {
-            height: calc(100% - #{$header-height});
+        .list-wrapper {
             background: #fefefe;
-            overflow: auto;
-            .list-wrapper {
+            & > main {
                 min-height: calc(100% - #{$footer-height});
                 padding: 20px;
                 box-sizing: border-box;
@@ -39,11 +37,23 @@ $logo-size: 180px;
                     display: flex;
                     margin-bottom: 20px;
                     height: 160px;
-                    img {
+                    img,
+                    video {
                         width: 160px;
                         height: 100%;
                         border-radius: 10px;
                         margin-left: 10px;
+                        outline: none;
+                        cursor: pointer;
+                        &:hover {
+                            box-shadow: 1px 1px 50px #e2e2e2;
+                        }
+                        .vjs-big-play-button {
+                            display: block;
+                            width: 70px;
+                            height: 70px;
+
+                        }
                     }
                     .info {
                         flex: 1;

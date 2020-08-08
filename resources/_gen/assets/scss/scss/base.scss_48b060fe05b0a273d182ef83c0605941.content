@@ -1,0 +1,1 @@
+html,body{height:100%}html .content,html .inner-content,body .content,body .inner-content{height:100%}html .content>header,html .inner-content>header,body .content>header,body .inner-content>header{height:40px}html .content>.content-wrap,html .inner-content>.content-wrap,body .content>.content-wrap,body .inner-content>.content-wrap{height:calc(100% - 40px);overflow:auto}

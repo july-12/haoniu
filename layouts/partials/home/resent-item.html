@@ -12,4 +12,12 @@
     {{ with .Param "cover" }}
     <img src="{{ $.Site.Params.cdnUrl }}/{{ . }}" alt="cover">
     {{ end }}
+    {{ with .Param "coverVideo" }}
+    <video class="video-js video-box" controls poster="{{ $.Site.Params.cdnUrl }}/images/{{ . }}">
+        <p class="vjs-no-js">
+            你的浏览器不支持 <code>video</code> 标签.
+        </p>
+    </video>
+    {{ end }}
+
 </li>

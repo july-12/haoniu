@@ -4,9 +4,10 @@ date: 2020-08-07T20:31:48+08:00
 draft: false
 author: 'tanyb'
 layout: 'single.video'
+coverVideo: "bg2.png"
 ---
 
-{{< video_player src="test.mp4"  >}}
+{{< video_player test.mp4  >}}
 
 ## 介绍
 

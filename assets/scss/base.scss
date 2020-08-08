@@ -1,0 +1,17 @@
+$header-nav-height: 40px;
+
+html,
+body {
+    height: 100%;
+    .content,
+    .inner-content {
+        height: 100%;
+        & > header {
+            height: $header-nav-height;
+        }
+        & > .content-wrap {
+            height: calc(100% - #{$header-nav-height});
+            overflow: auto;
+        }
+    }
+}

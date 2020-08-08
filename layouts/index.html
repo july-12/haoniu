@@ -11,17 +11,17 @@
         <p class="bio"> web developer | UX Designer </p>
     </div>
 </aside>
-<article>
+<article class="inner-content">
     {{ partial "header.html" . }}
-    <main>
-        <div class="list-wrapper">
+    <div class="content-wrap list-wrapper">
+        <main>
             {{ range .Data.Pages.Reverse  }}
-            {{ range .Pages }}
-            {{ partial "home/resent-item.html" . }}
+                {{ range .Pages }}
+                    {{ partial "home/resent-item.html" . }}
+                {{ end }}
             {{ end }}
-            {{ end }}
-        </div>
+        </main>
         <footer>copyright &copy; tanyb | hsj </footer>
-    </main>
+    </div>
 </article>
 {{ end }}

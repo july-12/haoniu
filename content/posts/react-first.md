@@ -3,7 +3,7 @@ title: "React First"
 date: 2020-07-20T10:56:46+08:00
 draft: false
 myname: "tanyb"
-tags: ['javascript', 'css']
+tags: ['javascript']
 cover: "images/bg2.png"
 ---
 
@@ -22,7 +22,9 @@ React是目前最流行的前端开发框架之一，其操作简单，功能强
 
 使用NPM直接安装
 
-### 安装二
+### 安装二NPM直接安装直接安装直接安装
+
+![img](/images/first.png)
 
 直接下载源码
 
@@ -48,3 +50,6 @@ React是目前最流行的前端开发框架之一，其操作简单，功能强
         fmt.Println("Hello, World!")
     }
 ```
+
+## 示列三
+## 范德萨放大放大示列三萨放大放大示列三

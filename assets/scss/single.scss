@@ -1,11 +1,14 @@
-.article-wrap {
+$aside-width: 200px;
+
+.article-wrap > main {
     width: 80%;
     max-width: 1000px;
     margin: 20px auto;
     position: relative;
     display: flex;
+
     & > article {
-        flex: 1;
+        width: calc(100% - #{$aside-width});
         & > img {
             max-width: 680px;
             border-radius: 10px;
@@ -13,21 +16,20 @@
         & > p:not(.date) {
             line-height: 30px;
         }
-        & > .content {
-             img {
-                width: 100%;
-                max-width: 680px;
-                min-height: 400px;
-            }
-            & > p {
-                line-height: 30px;
-            }
+
+        img {
+            width: 100%;
+            max-width: 680px;
+            min-height: 400px;
+        }
+        & > p {
+            line-height: 30px;
         }
     }
     & > aside {
-        width: 200px;
-        margin-top: 40px;
-        padding-left: 20px;
+        width: $aside-width;
+        margin-top: 20px;
+        // padding-left: 20px;
     }
 }
 
@@ -48,8 +50,8 @@ nav#TableOfContents {
             }
             & > ul {
                 width: calc(100% - 20px);
-                margin-top: 10px;
-                margin-left: 30px;
+                margin-top: 6px;
+                // margin-left: 30px;
             }
         }
     }
@@ -57,5 +59,6 @@ nav#TableOfContents {
 
 .fix-table-content {
     position: fixed;
-    top: 20px;
+    top: 26px;
+    width: $aside-width;
 }
