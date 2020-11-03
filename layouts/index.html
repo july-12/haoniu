@@ -17,7 +17,7 @@
         <main>
             {{ range .Data.Pages.Reverse  }}
                 {{ range .Pages }}
-                    {{ partial "home/resent-item.html" . }}
+                    {{ .Render "summary" }}
                 {{ end }}
             {{ end }}
         </main>

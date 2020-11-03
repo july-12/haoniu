@@ -4,10 +4,13 @@ $logo-size: 180px;
 
 .content {
     height: 100%;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
     display: flex;
     & > aside {
+        margin-right: 20px;
         width: 260px;
-        background: #f8f8f8;
         display: flex;
         justify-content: center;
         .info {
@@ -24,49 +27,39 @@ $logo-size: 180px;
         flex: 1;
 
         .list-wrapper {
-            background: #fefefe;
+            // background: #fefefe;
             & > main {
-                min-height: calc(100% - #{$footer-height});
                 padding: 20px;
+                margin: 0 auto;
                 box-sizing: border-box;
-                max-width: 960px;
+                min-height: calc(100% - #{$footer-height});
                 width: 96%;
                 min-width: 600px;
-                margin: 0 auto;
+                max-width: 960px;
+
                 .resent-item {
+                    width: 100%;
                     display: flex;
+                    flex-direction: column;
                     margin-bottom: 20px;
-                    height: 160px;
+                    padding-top: 8px;
+                    border-radius: 4px;
+                    background: #fff;
+                    box-shadow: -2px 2px 3px #efefef;
+
                     img,
                     video {
-                        width: 160px;
-                        height: 100%;
-                        border-radius: 10px;
-                        margin-left: 10px;
+                        margin-top: 10px;
+                        width: 100%;
+                        height: auto;
+                        max-height: 200px;
                         outline: none;
                         cursor: pointer;
-                        &:hover {
-                            box-shadow: 1px 1px 50px #e2e2e2;
-                        }
-                        .vjs-big-play-button {
-                            display: block;
-                            width: 70px;
-                            height: 70px;
-
-                        }
                     }
+
                     .info {
+                        padding: 2px 16px;
                         flex: 1;
-                        position: relative;
-                        .tag-list {
-                            position: absolute;
-                            top: 38px;
-                            left: 80px;
-                            .tag {
-                                padding: 0 4px;
-                                margin-left: 6px;
-                            }
-                        }
                         h3,
                         p {
                             margin: 0;
@@ -76,30 +69,39 @@ $logo-size: 180px;
                             font-size: 1.6em;
                         }
                         p.date {
-                            font-size: 14px;
-                            margin: 10px 0;
-                        }
-                        p.summary {
-                            max-width: 600px;
-                            font-size: 14px;
-                            line-height: 24px;
-                        }
-
-                        button {
-                            width: 80px;
-                            height: 32px;
-                            border-radius: 2px;
-                            border: none;
-                            outline: none;
-                            color: #494973;
-                            cursor: pointer;
-                            &:hover {
-                                opacity: 0.8;
-                            }
+                            margin: 6px 0;
                         }
                     }
                     &:last-child {
                         margin-bottom: 0;
+                    }
+
+                    .tag-list {
+                        margin: 10px 2px;
+                        .tag {
+                            padding: 0 4px;
+                            margin-left: 6px;
+                        }
+                    }
+                    .summary {
+                        max-width: 600px;
+                        padding: 0 6px;
+                        font-size: 14px;
+                        line-height: 22px;
+                    }
+                    button.more {
+                        width: calc(100% - 16px);
+                        margin: 0px auto;
+                        margin-top: 0;
+                        height: 32px;
+                        border-radius: 1px;
+                        border: none;
+                        outline: none;
+                        color: #494973;
+                        cursor: pointer;
+                        &:hover {
+                            opacity: 0.8;
+                        }
                     }
                 }
             }

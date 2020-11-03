@@ -14,7 +14,7 @@
     <main>
         <article>
             <h2>{{ .Title }}</h2>
-            <div class="anchor"> 作者: {{ .Param "author" }}</div>
+            <!-- <div class="anchor"> 作者: {{ .Param "author" }}</div> -->
             <div style="margin-bottom: 12px;">
                 <span class="date">
                     {{ .Date.Format "2006-Jan-2" }}
@@ -31,16 +31,9 @@
 
             {{ .Content }}
         </article>
-        <aside>
+        <!-- <aside>
             {{ .TableOfContents }}
-        </aside>
+        </aside> -->
     </main>
 </div>
-{{ end }}
-
-{{ define "insertJS" }}
-
-{{ $global := resources.Get "js/single.js" | resources.Minify }}
-<script type="text/javascript" src="{{ $global.Permalink }}"></script>
-
 {{ end }}

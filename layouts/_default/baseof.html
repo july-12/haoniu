@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     {{ block "title" . }}
     <title>{{ .Site.Title }}</title>
-    <link href="https://unpkg.com/@videojs/themes@1/dist/sea/index.css" 
-rel="stylesheet">
+    <link href="https://unpkg.com/@videojs/themes@1/dist/sea/index.css" rel="stylesheet">
     {{ end }}
     {{ range .Site.Params.custom_css -}}
     <link rel="stylesheet" href="{{ . | absURL }}">
@@ -25,7 +24,6 @@ rel="stylesheet">
         {{ block "main" . }}
         <div>this is default content of main block</div>
         {{ end }}
-
     </div>
 
     {{ block "insertJS" . }}

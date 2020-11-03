@@ -5,6 +5,7 @@ draft: false
 author: "天才佳"
 tags: ['ux']
 cover: "images/bg2.png"
+coverBlur: true
 ---
 
 ## UX设计

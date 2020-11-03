@@ -3,7 +3,6 @@ title: "React First"
 date: 2020-07-20T10:56:46+08:00
 draft: false
 myname: "tanyb"
-tags: ['javascript']
 cover: "images/bg2.png"
 ---
 

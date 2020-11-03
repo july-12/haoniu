@@ -3,6 +3,7 @@ title: 'Tmux'
 date: 2020-08-07T20:31:48+08:00
 draft: false
 author: 'tanyb'
+tags: ['ux', 'javascript', 'react', 'more']
 layout: 'single.video'
 coverVideo: "bg2.png"
 ---
