@@ -81,6 +81,13 @@ $logo-size: 120px;
                     }
                 }
             }
+            .tags {
+                width: 100%;
+                li {
+                    display: inline-block;
+                    margin: 0 6px 8px 0;
+                }
+            }
         }
     }
     & > article {

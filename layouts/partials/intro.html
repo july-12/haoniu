@@ -12,6 +12,16 @@
         <p> <i class="iconfont icondizhi"></i> <span class="text">中国杭州</span></p>
     </div>
 
+    <ul class="tags">
+        {{ range $key, $value := .Site.Taxonomies.tags }}
+        <li>
+            <a href="{{ $value.Page.Permalink }}">
+                <span class="tag tag-{{ $key }}">{{ $key }} {{ .Count }}</span>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+
     <!-- <div class="social">
         <div class="social-list">
             <a target="_blank" href="https://github.com/july-12"><i class="iconfont icongithub"> </i></a>

@@ -1,15 +1,10 @@
-
-    {{ define "main" }}
-    <div class="posts">
-        {{ range .Pages }}
-            <div class="post">
-                <h3><a href="{{ .Permalink }} ">{{ .Title}}</a></h3>
-            </div>
-        {{ end }}
-
-
-        <p>list main content</p>
-
+{{ define "main" }}
+<div class="posts">
+    {{ range .Pages }}
+    <div class="post">
+        <h3><a href="{{ .Permalink }} ">{{ .Title}}</a></h3>
     </div>
-
     {{ end }}
+    <p>list main content</p>
+</div>
+{{ end }}

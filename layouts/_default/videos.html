@@ -1,9 +1,0 @@
-{{ define "css" }}
-{{ $style := resources.Get "scss/section.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}">
-{{ end }}
-
-{{ define "main" }}
-{{ partial "header.html" . }}
-<div class="section-wrap">this is vedio page</div>
-{{ end }}

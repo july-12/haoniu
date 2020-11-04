@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     {{ range .Site.Params.custom_css -}}
     <link rel="stylesheet" href="{{ . | absURL }}">
     {{- end }}
-    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1985903_5r6f4vvg9gd.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1985903_mmhmip9sgt.css">
     {{ block "css" . }}
     {{ end }}
     {{ $baseStyle := resources.Get "scss/base.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
@@ -28,10 +28,9 @@
             <div>this is default content of main block</div>
         {{ end }}
         {{ block "footer" . }}
-            <footer>copyright &copy; tanyb | hsj </footer>
+            <footer>copyright &copy; tanyb  </footer>
         {{ end }}
     </div>
-
 
     {{ block "insertJS" . }}
     {{ end }}
