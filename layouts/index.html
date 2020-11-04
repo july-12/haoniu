@@ -1,6 +1,8 @@
 {{ define "css" }}
 {{ $style := resources.Get "scss/home.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ $summaryStyle := resources.Get "scss/summary.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $summaryStyle.Permalink }}">
 {{ end }}
 
 {{ define "main" }}
@@ -9,13 +11,16 @@
         {{ partial "intro.html" . }}
     </aside>
     <article>
-        <div class="content-wrap list-wrapper">
-            <main>
+        <div class="content-wrap">
+            <ul class="list-wrapper">
                 {{ range first 10 .Site.RegularPages  }}
-                    {{ .Render "summary" }}
+                {{ .Render "summary" }}
                 {{ end }}
-            </main>
+            </ul>
         </div>
     </article>
 </div>
+{{ block "footer" . }}
+    <footer>copyright &copy; tanyb </footer>
+{{ end }}
 {{ end }}

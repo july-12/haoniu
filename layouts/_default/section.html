@@ -1,8 +1,16 @@
 {{ define "css" }}
-    {{ $style := resources.Get "scss/section.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ $style := resources.Get "scss/section.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ $summaryStyle := resources.Get "scss/summary.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $summaryStyle.Permalink }}">
 {{ end }}
 
 {{ define "main" }}
-    <div class="section-wrap">this is secionts page</div>
+<div class="section-wrap">
+    <ul class="list-wrapper">
+        {{ range first 10 .Pages }}
+            {{ .Render "summary" }}
+        {{ end }}
+    </ul>
+</div>
 {{ end }}
