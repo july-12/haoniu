@@ -1,17 +1,27 @@
-$header-nav-height: 40px;
+$header-nav-height: 52px;
+$footer-height: 40px;
 
 html,
 body {
     height: 100%;
-    .content,
-    .inner-content {
-        height: 100%;
-        & > header {
-            height: $header-nav-height;
-        }
-        & > .content-wrap {
-            height: calc(100% - #{$header-nav-height});
-            overflow: auto;
+    & > header {
+        height: $header-nav-height;
+        border-bottom: 1px solid #efefef;
+        box-shadow: 0px 2px 3px #efefef;
+    }
+    & > footer {
+        height: $footer-height;
+    }
+    & > .content {
+        overflow: auto;
+        height: calc(100% - #{$header-nav-height});
+
+        & > footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: $footer-height;
+            border-top: 1px solid #fff;
         }
     }
 }

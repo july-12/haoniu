@@ -4,24 +4,18 @@
 {{ end }}
 
 {{ define "main" }}
-<aside>
-    <div class="info">
-        <img src="{{ $.Site.Params.cdnUrl }}/images/logo.png" alt="image" />
-        <h3> Tanyb | Hsj </h3>
-        <p class="bio"> web developer | UX Designer </p>
-    </div>
-</aside>
-<article class="inner-content">
-    {{ partial "header.html" . }}
-    <div class="content-wrap list-wrapper">
-        <main>
-            {{ range .Data.Pages.Reverse  }}
-                {{ range .Pages }}
+<div class="inner-content">
+    <aside>
+        {{ partial "intro.html" . }}
+    </aside>
+    <article>
+        <div class="content-wrap list-wrapper">
+            <main>
+                {{ range first 10 .Site.RegularPages  }}
                     {{ .Render "summary" }}
                 {{ end }}
-            {{ end }}
-        </main>
-        <footer>copyright &copy; tanyb | hsj </footer>
-    </div>
-</article>
+            </main>
+        </div>
+    </article>
+</div>
 {{ end }}

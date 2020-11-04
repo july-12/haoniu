@@ -10,7 +10,7 @@
     {{ range .Site.Params.custom_css -}}
     <link rel="stylesheet" href="{{ . | absURL }}">
     {{- end }}
-    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1985903_bh2p0bzcit8.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1985903_5r6f4vvg9gd.css">
     {{ block "css" . }}
     {{ end }}
     {{ $baseStyle := resources.Get "scss/base.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
@@ -20,11 +20,18 @@
 </head>
 
 <body>
+    {{ block "header" . }}
+        {{ partial "header" . }}
+    {{ end }}
     <div class="content">
         {{ block "main" . }}
-        <div>this is default content of main block</div>
+            <div>this is default content of main block</div>
+        {{ end }}
+        {{ block "footer" . }}
+            <footer>copyright &copy; tanyb | hsj </footer>
         {{ end }}
     </div>
+
 
     {{ block "insertJS" . }}
     {{ end }}
