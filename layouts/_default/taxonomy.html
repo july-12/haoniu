@@ -1,3 +1,15 @@
+
+{{ define "css" }}
+{{ $style := resources.Get "scss/taxonomy.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ end }}
+
 {{ define "main" }}
-<p>this is taxonomy pages </p>
+<div class="taxonomy-wrap">
+    <ul class="grid-wrapper">
+        {{ range first 10 .Pages }}
+            {{ .Render "tax" }}
+        {{ end }}
+    </ul>
+</div>
 {{ end }}

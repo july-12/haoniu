@@ -9,7 +9,6 @@ $logo-size: 120px;
 
     & > aside {
         width: 260px;
-        padding-top: 20px;
         h3 {
             margin: 5px 0;
         }
@@ -92,7 +91,7 @@ $logo-size: 120px;
     }
     & > article {
         flex: 1;
-        padding: 20px;
+        padding: 0 20px;
         margin: 0 auto;
         box-sizing: border-box;
         min-height: calc(100% - #{$footer-height});
@@ -103,6 +102,9 @@ $logo-size: 120px;
             height: $footer-height;
             line-height: $footer-height;
             text-align: center;
+        }
+        .pagination {
+            float: right;
         }
     }
 }

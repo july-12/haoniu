@@ -16,7 +16,7 @@
             <!-- <div class="anchor"> 作者: {{ .Param "author" }}</div> -->
             <div class="sub-info">
                 <span class="date">
-                    {{ .Date.Format "2006-Jan-2" }}
+                    {{ .Date.Format "2006-01-02" }}
                 </span>
                 {{ with .Params.tags }}
                 <ul class="tags">
@@ -40,6 +40,14 @@
             {{ end }}
 
             <section class="content">{{ .Content }}</section>
+            <div class="navigation">
+                {{ with .PrevInSection }}
+                    <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
+                {{ end }}
+                {{ with .NextInSection }}
+                    <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
+                {{ end }}
+            </div>
         </article>
         <!-- <aside>
             {{ .TableOfContents }}

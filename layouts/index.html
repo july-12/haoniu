@@ -6,6 +6,7 @@
 {{ end }}
 
 {{ define "main" }}
+
 <div class="inner-content">
     <aside>
         {{ partial "intro.html" . }}
@@ -13,14 +14,15 @@
     <article>
         <div class="content-wrap">
             <ul class="list-wrapper">
-                {{ range first 10 .Site.RegularPages  }}
+                {{ range (.Paginator 6).Pages }}
                 {{ .Render "summary" }}
                 {{ end }}
             </ul>
+            {{ template "_internal/pagination.html" . }}
         </div>
     </article>
 </div>
 {{ block "footer" . }}
-    <footer>copyright &copy; tanyb </footer>
+<footer>copyright &copy; tanyb </footer>
 {{ end }}
 {{ end }}

@@ -6,6 +6,8 @@ $aside-width: 0px;
     margin: 20px auto;
     position: relative;
     display: flex;
+    background: #fff;
+    padding: 10px 14px;
 
     & > article {
         width: calc(100% - #{$aside-width});
@@ -38,9 +40,43 @@ $aside-width: 0px;
         }
         section.content {
             & > p {
-                text-indent: 24px;
                 text-align: justify;
                 line-height: 28px;
+            }
+        }
+        .navigation {
+            margin: 24px 0;
+            height: 20px;
+            position: relative;
+            font-family: 'iconfont' !important;
+            .previous {
+                transition: all 0.2s ease-in-out;
+                &:hover {
+                    text-shadow: 2px 2px 2px #a6a6a6;
+                    transform: translate(-3px, 2px);
+                }
+            }
+            .next {
+                transition: all 0.2s ease-in-out;
+                &:hover {
+                    text-shadow: 2px 2px 2px #a6a6a6;
+                    transform: translate(3px, 2px);
+                }
+            }
+            .previous {
+                position: absolute;
+                left: 0;
+                &:before {
+                    content: '\ee14';
+                }
+            }
+            .next {
+                position: absolute;
+                right: 0;
+                &:after {
+                    content: '\ef0d';
+                    margin-left: 6px;
+                }
             }
         }
     }

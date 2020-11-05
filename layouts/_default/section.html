@@ -8,9 +8,10 @@
 {{ define "main" }}
 <div class="section-wrap">
     <ul class="list-wrapper">
-        {{ range first 10 .Pages }}
-            {{ .Render "summary" }}
+        {{ range (.Paginator 6).Pages }}
+        {{ .Render "summary" }}
         {{ end }}
     </ul>
+    {{ template "_internal/pagination.html" . }}
 </div>
 {{ end }}

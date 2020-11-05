@@ -15,6 +15,7 @@ body {
     & > .content {
         overflow: auto;
         height: calc(100% - #{$header-nav-height});
+        padding: 20px;
 
         & > footer {
             display: flex;
@@ -28,10 +29,65 @@ body {
 
 body {
     background: #f8f8f8;
+    box-sizing: border-box;
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
 }
 
 ul,
 ol {
     margin: 0;
     padding: 0;
+}
+
+$pagination-page-size: 34px;
+$pagination-disabled: #f0f0f0;
+$pagination-color: #23527c;
+$pagination-bg: #fff;
+$pagination-border: #ddd;
+$pagination-nav-width: 45px;
+
+.pagination {
+    display: inline-flex;
+    // background: $pagination-bg;
+    border: 1px solid $pagination-border;
+    margin: 20px 0;
+    border-radius: 4px;
+    a {
+        color: $pagination-color;
+        display: inline-flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .page-item {
+        cursor: pointer;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: $pagination-page-size;
+        height: $pagination-page-size;
+        border-right: 1px solid $pagination-border;
+        &:last-child {
+            border-right: none;
+        }
+        &:nth-child(-n + 2),
+        &:nth-last-child(-n + 2) {
+            width: $pagination-nav-width;
+        }
+    }
+    .disabled {
+        background: $pagination-disabled;
+        pointer-events: none;
+    }
+    .active {
+        background: $pagination-color;
+        a {
+            color: #fff;
+        }
+    }
 }

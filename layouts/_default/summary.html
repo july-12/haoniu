@@ -1,7 +1,7 @@
 <li class="resent-item">
     <div class="info">
         <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-        <p class="date"> {{ .Date.Format "2006-Jan-2" }}</p>
+        <p class="date"> {{ .Date.Format "2006-01-02" }}</p>
     </div>
     {{ with .Param "cover" }}
     <img src="{{ $.Site.Params.cdnUrl }}/{{ . }}" alt="cover">
