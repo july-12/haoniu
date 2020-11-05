@@ -4,6 +4,7 @@ date: 2020-07-20T10:56:46+08:00
 draft: false
 myname: "tanyb"
 cover: "images/bg2.png"
+tags: ['javascript', 'react']
 ---
 
 ## 介绍

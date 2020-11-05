@@ -54,16 +54,28 @@
         }
         button.more {
             width: calc(100% - 16px);
-            margin: 0px auto;
+            margin: 10px auto;
             margin-top: 0;
             height: 32px;
-            border-radius: 1px;
+            border-radius: 2px;
             border: none;
             outline: none;
             color: #494973;
+            box-shadow: 2px 2px 2px #e5e5e5;
+            opacity: 0.9;
             cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            a {
+                color: #525252;
+            }
             &:hover {
-                opacity: 0.8;
+                opacity: 1;
+                transform: translateY(-2px);
+                box-shadow: 4px 4px 2px #e5e5e5;
+                transition: all 0.2s ease-in-out;
+                a {
+                    color: #392341;
+                }
             }
         }
     }

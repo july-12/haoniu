@@ -8,8 +8,8 @@ $logo-size: 120px;
     display: flex;
 
     & > aside {
-        margin-right: 20px;
         width: 260px;
+        padding-top: 20px;
         h3 {
             margin: 5px 0;
         }
@@ -23,7 +23,6 @@ $logo-size: 120px;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            margin-top: 20px;
             & > .bio {
                 font-size: 0.97em;
                 font-weight: bold;
@@ -82,7 +81,8 @@ $logo-size: 120px;
                 }
             }
             .tags {
-                width: 100%;
+                margin-top: 40px;
+                padding-left: 32px;
                 li {
                     display: inline-block;
                     margin: 0 6px 8px 0;

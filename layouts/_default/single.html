@@ -14,21 +14,32 @@
         <article>
             <h2>{{ .Title }}</h2>
             <!-- <div class="anchor"> 作者: {{ .Param "author" }}</div> -->
-            <div style="margin-bottom: 12px;">
+            <div class="sub-info">
                 <span class="date">
                     {{ .Date.Format "2006-Jan-2" }}
                 </span>
-                <span>
+                {{ with .Params.tags }}
+                <ul class="tags">
+                    {{ range . }}
+                    <li>
+                        <a href="{{ "tags" | absURL }}/{{ . | urlize }}">
+                            <span class="tag tag-{{ . }}">{{ . }}</span>
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+                <!-- <span>
                     {{ range (.GetTerms "tags") }}
                     <span class="tag tag-{{ .LinkTitle }}">{{ .LinkTitle }}</span>
                     {{ end }}
-                </span>
+                </span> -->
             </div>
             {{ with .Param "cover" }}
-            <img src="/{{ . }}" alt="cover">
+            <img src="{{ $.Site.Params.cdnUrl }}/{{ . }}" alt="cover">
             {{ end }}
 
-            {{ .Content }}
+            <section class="content">{{ .Content }}</section>
         </article>
         <!-- <aside>
             {{ .TableOfContents }}
