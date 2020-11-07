@@ -2,23 +2,81 @@
 <title> {{ .Title }}</title>
 {{ end }}
 
+
 {{ define "css" }}
+
+<link href="https://vjs.zencdn.net/7.8.4/video-js.min.css" rel="stylesheet" />
+
+<link href="{{ .Site.BaseURL }}css/videojs-playlist-ui.css" rel="stylesheet">
+
 {{ $style := resources.Get "scss/single.video.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 
-{{ $styleVideo := resources.Get "scss/video.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $styleVideo.Permalink }}">
-
-<link href="//vjs.zencdn.net/7.8.2/video-js.min.css" rel="stylesheet">
-<script src="//vjs.zencdn.net/7.8.2/video.min.js"></script>
 <script>window.HELP_IMPROVE_VIDEOJS = false;</script>
 {{ end }}
 
+
 {{ define "main" }}
 <div class="content-wrap video-wrap">
-    <header></header>
     <main>
         {{ .Content }}
+        {{ with .Param "playlist" }}
+        <div id="vjs-playlist-wrap" class="vjs-playlist-wrap">
+            <i id="playlist-trigger" class="iconfont"></i>
+            <header> {{ $.Site.Title }} </header>
+            <div class="vjs-playlist"></div>
+        </div>
+        {{ end }}
     </main>
+    <div class="cover-bg" />
 </div>
+{{ end }}
+
+{{ define "script" }}
+
+<script src="https://vjs.zencdn.net/7.8.4/video.min.js"></script>
+<script src="/js/videojs-playlist.min.js"></script>
+<script src="/js/videojs-playlist-ui.min.js"></script>
+
+<script>
+    {{ with .Param "playlist" }}
+        var playlist = []
+        {{ range $key, $value := . }}
+            var item = {
+                name: {{ $value.name }},
+                duration: {{ $value.duration }},
+                sources: [
+                    { src: "{{ $.Site.Params.cdnUrl }}/videos/{{ $value.src }}", type: 'video/mp4' }
+                ],
+                thumbnail: [
+                    {
+                        srcset: '{{ $.Site.Params.cdnUrl }}/images/{{ $value.thumbnail }}',
+                        type: 'image/png',
+                        media: '(min-width: 400px;)'
+                    },
+                    {
+                        src: '{{ $.Site.Params.cdnUrl }}/images/{{ $value.thumbnail }}',
+                    }
+                ]
+            }
+            playlist.push( item)
+        {{ end }}
+
+
+        var player = videojs('my-player');
+        player.playlist(playlist)
+        // player.playlist.autoadvance(1);
+        player.playlistUi({
+            playOnSelect: true
+        });
+    {{ end }}
+
+</script>
+
+{{ with .Param "playlist" }}
+    {{ $switch := resources.Get "js/playlistSwitch.js" | resources.Minify }}
+    <script type="text/javascript" src="{{ $switch.Permalink }}">
+    </script>
+{{ end }}
+
 {{ end }}

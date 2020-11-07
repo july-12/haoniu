@@ -3,20 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
+
     {{ block "title" . }}
-    <title>{{ .Site.Title }}</title>
-    <link href="https://unpkg.com/@videojs/themes@1/dist/sea/index.css" rel="stylesheet">
+        <title>{{ .Site.Title }}</title>
     {{ end }}
+
     {{ range .Site.Params.custom_css -}}
-    <link rel="stylesheet" href="{{ . | absURL }}">
+        <link rel="stylesheet" href="{{ . | absURL }}">
     {{- end }}
-    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1985903_1yyn4zt1io9.css">
-    {{ block "css" . }}
-    {{ end }}
+
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1985903_idsicwwp05d.css">
+
     {{ $baseStyle := resources.Get "scss/base.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $baseStyle.Permalink }}">
+
     {{ $headerStyle := resources.Get "scss/header.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $headerStyle.Permalink }}">
+
+    {{ block "css" . }}
+    {{ end }}
+
 </head>
 
 <body>
@@ -29,7 +35,7 @@
         {{ end }}
     </div>
 
-    {{ block "insertJS" . }}
+    {{ block "script" . }}
     {{ end }}
 
 </body>

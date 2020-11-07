@@ -5,7 +5,8 @@ draft: false
 author: 'tanyb'
 tags: ['ux', 'javascript', 'react', 'more']
 layout: 'single.video'
-coverVideo: "bg2.png"
+coverVideo: 'bg2.png'
+playlist: [{ name: 'tmux', duration: 80,  src: "test.mp4", thumbnail: "bg2.png" }]
 ---
 
 {{< video_player test.mp4  >}}
@@ -27,30 +28,30 @@ tmux 同时能支持非常优秀的在线人工编译能力。
 ### html
 
 ```html
-    <video
-        class="video-js video-box"
-        controls
-        poster="//vjs.zencdn.net/v/oceans.png"
-        src="{{ $.Site.Params.cdnUrl }}/videos/{{ .Get 0 }}"
-    >
-        <p class="vjs-no-js">你的浏览器不支持 <code>video</code> 标签.</p>
-    </video>
+<video
+    class="video-js video-box"
+    controls
+    poster="//vjs.zencdn.net/v/oceans.png"
+    src="{{ $.Site.Params.cdnUrl }}/videos/{{ .Get 0 }}"
+>
+    <p class="vjs-no-js">你的浏览器不支持 <code>video</code> 标签.</p>
+</video>
 ```
 
 ### css
 
 ```css
-    .video-box {
-        padding: 10px;
-        border: none;
-        outline: none;
-    }
+.video-box {
+    padding: 10px;
+    border: none;
+    outline: none;
+}
 ```
 
 ### js
 
 ```javascript
-    const App = (props) => {
-        return <div className="hello">{props.name}</div>
-    }
+const App = (props) => {
+    return <div className="hello">{props.name}</div>;
+};
 ```

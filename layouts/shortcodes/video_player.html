@@ -1,5 +1,9 @@
-<video class="video-js vjs-theme-city" controls poster="//vjs.zencdn.net/v/oceans.png"
-    src="{{ $.Site.Params.cdnUrl }}/videos/{{ .Get 0 }}">
+<video id="my-player" class="video-js vjs-default-skin" controls preload="auto"
+    poster='{{ $.Site.Params.cdnUrl }}/images/bg2.png' data-setup='{ "aspectRatio": "16:9", "playbackRates": [1, 1.5, 2], "controlBar": {
+        "pictureInPictureToggle": false
+    }
+}'>
+    <source src="{{ $.Site.Params.cdnUrl }}/videos/{{ .Get 0 }}" type='video/mp4' />
     <p class="vjs-no-js">
         你的浏览器不支持 <code>video</code> 标签.
     </p>
