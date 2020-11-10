@@ -1,9 +1,12 @@
+
+@import "./common";
+
 $aside-width: 0px;
 
-.article-wrap > main {
+.content-wrap > main {
     width: 100%;
-    max-width: 650px;
-    margin: 20px auto;
+    max-width: $content-wrap-width;
+    margin: 0 auto;
     position: relative;
     display: flex;
     background: #fff;

@@ -98,6 +98,10 @@ $logo-size: 120px;
         width: 96%;
         min-width: 600px;
         max-width: 960px;
+        .list-wrapper {
+            width: 100%;
+            max-width: 700px;
+        }
         & > footer {
             height: $footer-height;
             line-height: $footer-height;

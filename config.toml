@@ -1,6 +1,6 @@
 baseUrl = "https://hsj1993.cn"
 languageCode = "en-us"
-title = "Shimmer Blog"
+title = "言西澡堂"
 
 [markup]
     [markup.highlight]
@@ -12,5 +12,5 @@ title = "Shimmer Blog"
     mood = "moods"
     
 [params]
-    cdnUrl = "http://images.hsj1993.cn"
+    cdnUrl = "https://images.hsj1993.cn"
     custom_css = ["css/normalize.css", "css/global.css"]

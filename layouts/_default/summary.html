@@ -15,11 +15,9 @@
     {{ end }}
     <p class="summary">{{ .Summary | truncate 120 }} </p>
 
-    <button class="more">
-        <a href="{{ .RelPermalink }}">
-            阅读全文
-        </a>
-    </button>
+    <a href="{{ .RelPermalink }}" class="readmore">
+        阅读全文
+    </a>
 
     <!-- <div class="tag-list">
         {{ range (.GetTerms "tags") }}

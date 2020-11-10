@@ -1,5 +1,7 @@
-$video-width: 680px;
-$cover-offset-height: 90px;
+@import './common';
+
+$video-width: $content-wrap-width;
+$cover-offset-height: 80px;
 $cover-height: $video-width * 9 / 16 + $cover-offset-height;
 
 $playlist-height: 364px;
@@ -9,13 +11,30 @@ $playlist-header-height: 50px;
 
 .video-wrap {
     position: relative;
+    .cover-bg {
+        height: $cover-height;
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        background: #272b36;
+        z-index: 10;
+    }
     & > main {
-        width: $video-width + 20px;
+        width: $content-wrap-width;
         margin: 0 auto;
-        padding-top: 20px;
         position: relative;
         overflow-x: hidden;
+        background: #fff;
+        padding: $cover-height - 20 14px 10px;
+
         .video-js {
+            position: absolute;
+            z-index: 20;
+            top: 20px;
+            left: 0;
+            right: 0;
+
             margin-bottom: 60px;
             video {
                 outline: none;
@@ -85,15 +104,6 @@ $playlist-header-height: 50px;
                 outline: none;
             }
         }
-    }
-    .cover-bg {
-        height: $cover-height;
-        position: absolute;
-        top: -20px;
-        left: -20px;
-        right: -20px;
-        background: #272b36;
-        z-index: -10;
     }
 }
 

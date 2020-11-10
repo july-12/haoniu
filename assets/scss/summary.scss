@@ -1,3 +1,8 @@
+//colors
+$red: #e1332d;
+$white: #fff;
+$btn-readmore-width: 180px;
+
 .list-wrapper {
     .resent-item {
         width: 100%;
@@ -52,31 +57,35 @@
             font-size: 14px;
             line-height: 20px;
         }
-        button.more {
-            width: calc(100% - 16px);
+
+        a.readmore {
+            $btn-height: 36px;
+            width: $btn-readmore-width;
             margin: 10px auto;
             margin-top: 0;
-            height: 32px;
-            border-radius: 2px;
-            border: none;
-            outline: none;
-            color: #494973;
-            box-shadow: 2px 2px 2px #e5e5e5;
-            opacity: 0.9;
-            cursor: pointer;
-            transition: all 0.2s ease-in-out;
-            a {
-                color: #525252;
-            }
-            &:hover {
-                opacity: 1;
-                transform: translateY(-2px);
-                box-shadow: 4px 4px 2px #e5e5e5;
-                transition: all 0.2s ease-in-out;
-                a {
-                    color: #392341;
-                }
-            }
+            height: $btn-height;
+            line-height: $btn-height;
         }
     }
+}
+
+.readmore {
+    $btn-color: #b49daf;
+    border: 1px solid $btn-color;
+    display: inline-block;
+    color: $btn-color;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+        background: $btn-color;
+        color: #fff;
+        transition: all 0.3s linear;
+    }
+
 }
