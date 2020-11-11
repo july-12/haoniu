@@ -122,15 +122,16 @@ $playlist-header-height: 50px;
 
 .vjs-playlist-vertical .vjs-playlist-item {
     margin-bottom: 0;
+    position: relative;
 }
 
-.vjs-slider-horizontal .vjs-volume-level:before {
-    top: -0.5em;
-}
+// .vjs-slider-horizontal .vjs-volume-level:before {
+//     top: -0.5em;
+// }
 
-.video-js .vjs-play-progress:before {
-    top: -5px;
-}
+// .video-js .vjs-play-progress:before {
+//     top: -5px;
+// }
 
 .vjs-playlist-item {
     padding: 6px 10px;

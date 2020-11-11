@@ -15,23 +15,6 @@
 <script>window.HELP_IMPROVE_VIDEOJS = false;</script>
 {{ end }}
 
-
-{{ define "main" }}
-<div class="content-wrap video-wrap">
-    <div class="cover-bg" ></div>
-    <main>
-        {{ .Content }}
-        {{ with .Param "playlist" }}
-        <div id="vjs-playlist-wrap" class="vjs-playlist-wrap">
-            <i id="playlist-trigger" class="iconfont"></i>
-            <header> {{ $.Site.Title }} </header>
-            <div class="vjs-playlist"></div>
-        </div>
-        {{ end }}
-    </main>
-</div>
-{{ end }}
-
 {{ define "script" }}
 
 <script src="{{ .Site.BaseURL }}/js/video.min.js"></script>
@@ -78,5 +61,20 @@
     <script type="text/javascript" src="{{ $switch.Permalink }}">
     </script>
 {{ end }}
+{{ end }}
 
+{{ define "main" }}
+<div class="content-wrap video-wrap">
+    <div class="cover-bg" ></div>
+    <main>
+        {{ .Content }}
+        {{ with .Param "playlist" }}
+        <div id="vjs-playlist-wrap" class="vjs-playlist-wrap">
+            <i id="playlist-trigger" class="iconfont"></i>
+            <header> {{ $.Site.Title }} </header>
+            <div class="vjs-playlist"></div>
+        </div>
+        {{ end }}
+    </main>
+</div>
 {{ end }}

@@ -1,5 +1,8 @@
+@import "./common";
+
 .section-wrap {
-    width: 700px;
+    width: 100%;
+    max-width: $content-wrap-width;
     margin: 20px auto;
     .pagination {
         float: right;

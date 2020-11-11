@@ -12,42 +12,46 @@
 <div id="article-wrap" class="content-wrap article-wrap">
     <main>
         <article>
-            <h2>{{ .Title }}</h2>
-            <!-- <div class="anchor"> 作者: {{ .Param "author" }}</div> -->
-            <div class="sub-info">
-                <span class="date">
-                    {{ .Date.Format "2006-01-02" }}
-                </span>
-                {{ with .Params.tags }}
-                <ul class="tags">
-                    {{ range . }}
-                    <li>
-                        <a href="{{ "tags" | absURL }}/{{ . | urlize }}">
-                            <span class="tag tag-{{ . }}">{{ . }}</span>
-                        </a>
-                    </li>
+            <section>
+                <h2>{{ .Title }}</h2>
+                <!-- <div class="anchor"> 作者: {{ .Param "author" }}</div> -->
+                <div class="sub-info">
+                    <span class="date">
+                        {{ .Date.Format "2006-01-02" }}
+                    </span>
+                    {{ with .Params.tags }}
+                    <ul class="tags">
+                        {{ range . }}
+                        <li>
+                            <a href="{{ "tags" | absURL }}/{{ . | urlize }}">
+                                <span class="tag tag-{{ . }}">{{ . }}</span>
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
                     {{ end }}
-                </ul>
-                {{ end }}
-                <!-- <span>
+                    <!-- <span>
                     {{ range (.GetTerms "tags") }}
                     <span class="tag tag-{{ .LinkTitle }}">{{ .LinkTitle }}</span>
                     {{ end }}
                 </span> -->
-            </div>
+                </div>
+            </section>
             {{ with .Param "cover" }}
-            <img src="{{ $.Site.Params.cdnUrl }}/{{ . }}" alt="cover">
+            <img src="{{ $.Site.Params.cdnUrl }}/images/{{ . }}" alt="cover">
             {{ end }}
 
-            <section class="content">{{ .Content }}</section>
-            <div class="navigation">
-                {{ with .PrevInSection }}
+            <section class="content">
+                {{ .Content }}
+                <div class="navigation">
+                    {{ with .PrevInSection }}
                     <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
-                {{ end }}
-                {{ with .NextInSection }}
+                    {{ end }}
+                    {{ with .NextInSection }}
                     <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
-                {{ end }}
-            </div>
+                    {{ end }}
+                </div>
+            </section>
         </article>
         <!-- <aside>
             {{ .TableOfContents }}

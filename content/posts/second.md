@@ -4,8 +4,8 @@ date: 2020-07-29
 draft: false
 author: "天才佳"
 tags: ['ux']
-cover: "images/bg2.png"
-coverBlur: true
+cover: "bg6.png"
+withoutCover: true
 ---
 
 ## UX设计

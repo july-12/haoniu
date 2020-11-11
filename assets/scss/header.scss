@@ -10,8 +10,9 @@
         i {
             font-size: 17px;
             color: cornflowerblue;
+            &:active,
             &:hover {
-                color: rosybrown;
+                color: slateblue;
             }
         }
         .nav {

@@ -39,9 +39,9 @@ body {
 }
 
 .highlight > pre {
-    max-width: 700px;
+    max-width: 680px;
     padding: 10px 0;
     overflow: auto;
     border-radius: 4px;
-    box-shadow: 1px 1px 6px #282b36;
+    /* box-shadow: 1px 1px 6px #282b36; */
 }

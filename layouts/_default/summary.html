@@ -3,26 +3,29 @@
         <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         <p class="date"> {{ .Date.Format "2006-01-02" }}</p>
     </div>
-    {{ with .Param "cover" }}
-    <img src="{{ $.Site.Params.cdnUrl }}/{{ . }}" alt="cover">
+
+    {{ $withoutCover := .Param "withoutCover" }}
+
+    {{ if eq .Section "posts" }}
+        {{ with .Param "cover" }}
+            {{ $url := printf "%s/images/%s" $.Site.Params.cdnUrl  . }}
+            <div class="cover {{ if eq $withoutCover true }} without-cover {{ end }}" style="--cover:  url({{ $url }})">
+                <img src="{{ $url }}" alt="cover">
+            </div>
+        {{ end }}
+    {{ else }}
+        {{ with .Param "coverVideo" }}
+            {{ $url := printf "%s/images/%s" $.Site.Params.cdnUrl  . }}
+            <div class="cover {{ if eq $withoutCover true }} without-cover {{ end }}" style="--cover:  url({{ $url }})">
+                <img src="{{ $url }}" alt="cover">
+            </div>
+        {{ end }}
     {{ end }}
-    {{ with .Param "coverVideo" }}
-    <video class="video-js video-box" controls poster="{{ $.Site.Params.cdnUrl }}/images/{{ . }}">
-        <p class="vjs-no-js">
-            你的浏览器不支持 <code>video</code> 标签.
-        </p>
-    </video>
-    {{ end }}
+
     <p class="summary">{{ .Summary | truncate 120 }} </p>
 
     <a href="{{ .RelPermalink }}" class="readmore">
-        阅读全文
+        阅览全文
+        <i class="iconfont iconNEXT"></i>
     </a>
-
-    <!-- <div class="tag-list">
-        {{ range (.GetTerms "tags") }}
-        <a href="{{ .Permalink }}"><span class="tag tag-{{ .LinkTitle }}">{{ .LinkTitle }}</span></a>
-        {{ end }}
-    </div> -->
-
 </li>

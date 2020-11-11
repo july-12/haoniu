@@ -1,7 +1,7 @@
-
-@import "./common";
+@import './common';
 
 $aside-width: 0px;
+$line-space: 12px;
 
 .content-wrap > main {
     width: 100%;
@@ -10,82 +10,76 @@ $aside-width: 0px;
     position: relative;
     display: flex;
     background: #fff;
-    padding: 10px 14px;
 
     & > article {
         width: calc(100% - #{$aside-width});
-        & > h2 {
-            margin: 0;
-        }
-        & > .sub-info {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 12px 0;
-            ul.tags {
-                li {
-                    display: inline-block;
-                }
-                .tag {
-                    padding: 2px 4px;
+
+        & > section {
+            padding: 10px 14px;
+
+            & > h2 {
+                margin: 0;
+            }
+            & > .sub-info {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: $line-space 0;
+                ul.tags {
+                    li {
+                        display: inline-block;
+                    }
+                    .tag {
+                        padding: 2px 4px;
+                    }
                 }
             }
-        }
-        & > img {
-            max-width: 680px;
-            border-radius: 10px;
         }
 
         img {
             width: 100%;
-            max-width: 680px;
-            min-height: 400px;
+            height: auto;
+            margin-bottom: $line-space;
         }
+
         section.content {
             & > p {
                 text-align: justify;
                 line-height: 28px;
             }
         }
-        .navigation {
-            margin: 24px 0;
-            height: 20px;
-            position: relative;
-            font-family: 'iconfont' !important;
-            .previous {
-                transition: all 0.2s ease-in-out;
-                &:hover {
-                    text-shadow: 2px 2px 2px #a6a6a6;
-                    transform: translate(-3px, 2px);
-                }
-            }
-            .next {
-                transition: all 0.2s ease-in-out;
-                &:hover {
-                    text-shadow: 2px 2px 2px #a6a6a6;
-                    transform: translate(3px, 2px);
-                }
-            }
-            .previous {
-                position: absolute;
-                left: 0;
-                &:before {
-                    content: '\ee14';
-                }
-            }
-            .next {
-                position: absolute;
-                right: 0;
-                &:after {
-                    content: '\ef0d';
-                    margin-left: 6px;
-                }
-            }
-        }
     }
     & > aside {
         width: $aside-width;
         margin-top: 20px;
+    }
+}
+@mixin nav-item($content, $translateX) {
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+    &:before {
+        content: $content;
+    }
+    &:hover {
+        text-shadow: 2px 2px 2px #a6a6a6;
+        transform: translate($translateX, 2px);
+    }
+}
+.navigation {
+    margin: 24px 0;
+    height: 20px;
+    position: relative;
+    font-family: 'iconfont' !important;
+    .previous {
+        @include nav-item('\ee14', -3px);
+        left: 0;
+    }
+    .next {
+        @include nav-item('\ef0d', 3px);
+        right: 0;
+        &:after {
+            margin-left: 6px;
+        }
     }
 }
 
