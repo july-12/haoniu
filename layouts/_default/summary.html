@@ -1,6 +1,7 @@
+{{ $link := .RelPermalink }}
 <li class="resent-item">
     <div class="info">
-        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <h3><a href="{{ $link }}">{{ .Title }}</a></h3>
         <p class="date"> {{ .Date.Format "2006-01-02" }}</p>
     </div>
 
@@ -16,9 +17,14 @@
     {{ else }}
         {{ with .Param "coverVideo" }}
             {{ $url := printf "%s/images/%s" $.Site.Params.cdnUrl  . }}
-            <div class="cover {{ if eq $withoutCover true }} without-cover {{ end }}" style="--cover:  url({{ $url }})">
-                <img src="{{ $url }}" alt="cover">
-            </div>
+            <a href="{{ $link }}">
+                <div class="cover cover-video {{ if eq $withoutCover true }} without-cover {{ end }}" style="--cover:  url({{ $url }})">
+                    <video poster="{{ $url }}" preload="none" controls>
+                    </video>
+                    <span class="play-btn">
+                    </span>
+                </div>
+            </a>
         {{ end }}
     {{ end }}
 

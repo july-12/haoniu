@@ -111,6 +111,9 @@ $playlist-header-height: 50px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    &:hover {
+        background-color: rgba(43,51,63,.4)
+    }
 }
 
 .js-focus-visible .vjs-menu li.vjs-selected:hover,

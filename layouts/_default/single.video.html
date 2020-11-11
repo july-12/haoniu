@@ -67,11 +67,12 @@
 <div class="content-wrap video-wrap">
     <div class="cover-bg" ></div>
     <main>
+        {{ $title := .Title }}
         {{ .Content }}
         {{ with .Param "playlist" }}
         <div id="vjs-playlist-wrap" class="vjs-playlist-wrap">
             <i id="playlist-trigger" class="iconfont"></i>
-            <header> {{ $.Site.Title }} </header>
+            <header> {{ $title }} </header>
             <div class="vjs-playlist"></div>
         </div>
         {{ end }}

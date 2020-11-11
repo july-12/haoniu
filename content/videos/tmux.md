@@ -20,7 +20,7 @@ tmux 同时能支持非常优秀的在线人工编译能力。
 ## 安装
 
 ```bash
-    $ brew install tmux
+$ brew install tmux
 ```
 
 ## Demo
