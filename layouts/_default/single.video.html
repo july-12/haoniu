@@ -7,7 +7,7 @@
 
 <link href="{{ .Site.BaseURL }}/css/video-js.min.css" rel="stylesheet" />
 
-<link href="{{ .Site.BaseURL }}css/videojs-playlist-ui.css" rel="stylesheet">
+<link href="{{ .Site.BaseURL }}/css/videojs-playlist-ui.css" rel="stylesheet">
 
 {{ $style := resources.Get "scss/single.video.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
