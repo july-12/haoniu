@@ -5,6 +5,26 @@
 <link rel="stylesheet" href="{{ $summaryStyle.Permalink }}">
 {{ end }}
 
+{{ define "script" }}
+<script type="text/javascript">
+    (function () {
+        console.log('in section')
+        const pathname = window.location.pathname
+        const navItems = document.querySelectorAll('.header-menu .nav li')
+
+        navItems.forEach(nav => {
+            const isActive = nav.getAttribute('data-nav-url') === pathname
+            if (isActive) {
+                nav.classList.add('active')
+            } else {
+                nav.classList.remove('active')
+            }
+        })
+
+    })()
+</script>
+{{ end }}
+
 {{ define "main" }}
 <div class="section-wrap">
     <ul class="list-wrapper">
